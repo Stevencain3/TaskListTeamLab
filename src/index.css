@@ -1,0 +1,100 @@
+/* Reset some default styles */
+body {
+  margin: 0;
+  font-family: system-ui, Arial, sans-serif;
+  background: #f4f8fb; /* soft background color */
+  color: #333;
+}
+
+/* Center the app container */
+#root {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  min-height: 100vh;
+  padding: 2rem;
+}
+
+/* Card-like container */
+.app-container {
+  background: #fff;
+  border-radius: 12px;
+  padding: 2rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  max-width: 600px;
+  width: 100%;
+}
+
+/* Header styles */
+header h1 {
+  margin: 0;
+  color: #2a6bb0; /* WSC blue-ish */
+}
+header p {
+  margin-top: 4px;
+  color: #666;
+}
+
+/* Form & input */
+form {
+  display: flex;
+  gap: 0.5rem;
+  margin: 1rem 0;
+}
+input[type="text"],
+input[type="search"],
+input[type="number"],
+input:not([type]) {
+  flex: 1;
+  padding: 0.5rem;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+}
+button {
+  background: #2a6bb0;
+  border: none;
+  color: #fff;
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+button:hover {
+  background: #1d4f82;
+}
+
+/* Task list */
+ul {
+  list-style: none;
+  padding: 0;
+}
+li {
+  background: #f9fcff;
+  padding: 0.5rem 0.75rem;
+  margin: 0.4rem 0;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+li span {
+  flex: 1;
+  margin-left: 0.5rem;
+}
+
+/* Filter bar */
+nav {
+  margin: 1rem 0;
+}
+nav button {
+  background: #eee;
+  color: #333;
+  margin-right: 0.5rem;
+}
+nav button:hover {
+  background: #ddd;
+}
+nav button[style*="700"] {
+  background: #2a6bb0;
+  color: #fff;
+}
