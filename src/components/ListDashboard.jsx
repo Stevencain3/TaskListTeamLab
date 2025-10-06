@@ -2,7 +2,7 @@ import React, { useMemo, useState } from "react";
 import AddListForm from "./AddListForm.jsx";
 import ListCard from "./ListCard.jsx";
 
-export default function ListDashboard({ lists, onAdd, onDelete }) {
+export default function ListDashboard({ lists, onAdd, onDelete, onOpen }) {
   const [filter, setFilter] = useState("all"); // all | empty | hasTasks
 
   const counts = useMemo(() => {
@@ -31,7 +31,7 @@ export default function ListDashboard({ lists, onAdd, onDelete }) {
           <p style={{ color: "#666", fontStyle: "italic" }}>No lists yet. Add one above.</p>
         ) : (
           visible.map(l => (
-            <ListCard key={l.id} list={l} onDelete={onDelete} />
+            <ListCard key={l.id} list={l} onDelete={onDelete} onOpen={onOpen} />
           ))
         )}
       </div>
