@@ -1,12 +1,14 @@
-// Logic copied from "AddTaskForm.jsx", logic is largely unchanged
+// Logic largely copied from "AddTaskForm.jsx", logic is mostly unchanged
+// Just changing logic from adding tasks to adding lists
 
 import { useState } from "react";
 
 export default function AddListForm({ onAdd }) {
   const [text, setText] = useState("");
   const trimmed = text.trim();
-  const isValid = trimmed.length >= 3; // at least 3 non-space chars
+  const isValid = trimmed.length >= 3; // Requires lists to be at least 3 non-space characters
 
+  // Only returns lists IF they are valid
   const submit = (e) => {
     e.preventDefault();
     if (!isValid) return;
