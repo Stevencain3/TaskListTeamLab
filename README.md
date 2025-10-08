@@ -1,6 +1,6 @@
 # Task List Creator
 
-THis project allows for students/users to upload lists with embedded tasks. These tasks and lists can be created, deleted, and filtered. 
+This project allows for students/users to upload lists with embedded tasks. These tasks and lists can be created, deleted, and filtered. Tasks and Lists are both saved to local memory, so you are able to start where you left off.
 
 ## List Screen
 
