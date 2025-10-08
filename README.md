@@ -1,16 +1,11 @@
-# React + Vite
+# Task List Creator
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+THis project allows for students/users to upload lists with embedded tasks. These tasks and lists can be created, deleted, and filtered. 
 
-Currently, two official plugins are available:
+## List Screen
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Users can create their own lists with their own names that must be three characters long. To access each list you can click the title of the lists to edit the tasks within them. Each list that you create shows how many embedded tasks are within that list. The filter bar shows how many lists have tasks and can show lists that do not have tasks. Finally, Lists are able to be deleted from this screen which will delete the list and all tasks that are embedded within that list. 
 
-## React Compiler
+## Task Screen
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+In this screen users can create tasks inside each individual list. Each task must be at least three characters long. The user can then mark each task, leave as is, or delete that task. From this screen you can either return back to the list screen or you can delete the list from inside the task screen if you decide it is no longer needed. 
