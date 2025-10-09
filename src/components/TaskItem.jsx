@@ -1,3 +1,5 @@
+// Grabbed from "ClassEx2" and completly unchanged
+
 export default function TaskItem({ task, onToggle, onDelete }) {
   return (
     <li style={{ display: "flex", gap: 8, alignItems: "center", margin: "6px 0" }}>

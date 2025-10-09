@@ -1,3 +1,5 @@
+// Grabbed from "ClassEx2" and completly unchanged
+
 import TaskItem from "./TaskItem.jsx";
 
 export default function TaskList({ tasks, onToggle, onDelete, filter = "all" }) {
