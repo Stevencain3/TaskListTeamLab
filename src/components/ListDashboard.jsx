@@ -5,6 +5,7 @@ import ListCard from "./ListCard.jsx";
 export default function ListDashboard({ lists, onAdd, onDelete, onOpen }) {
   const [filter, setFilter] = useState("all"); // all | empty | hasTasks
 
+  // Compute totals for each filter category
   const counts = useMemo(() => {
     return {
       total: lists.length,
@@ -13,24 +14,48 @@ export default function ListDashboard({ lists, onAdd, onDelete, onOpen }) {
     };
   }, [lists]);
 
+  // Determine which lists to show based on the current filter
   let visible = lists;
   if (filter === "empty") visible = lists.filter(l => !(l.tasks && l.tasks.length));
   if (filter === "hasTasks") visible = lists.filter(l => l.tasks && l.tasks.length);
 
-  return (
+    return (
     <section>
+      {/* AddListForm: presents input + validation */}
       <AddListForm onAdd={onAdd} />
+
+      {/* Filter controls: allow users choose which list is shown on the sceen */}
       <div style={{ margin: "12px 0" }}>
-        <button onClick={() => setFilter("all")} aria-pressed={filter === "all"}>All ({counts.total})</button>
-        <button onClick={() => setFilter("empty")} aria-pressed={filter === "empty"} style={{ marginLeft: 8 }}>Empty ({counts.empty})</button>
-        <button onClick={() => setFilter("hasTasks")} aria-pressed={filter === "hasTasks"} style={{ marginLeft: 8 }}>With Tasks ({counts.hasTasks})</button>
+        <button onClick={() => setFilter("all")} aria-pressed={filter === "all"}>
+          All ({counts.total})
+        </button>
+
+        {/* 'Empty' lists are lists that have 0 tasks */}
+        <button
+          onClick={() => setFilter("empty")}
+          aria-pressed={filter === "empty"}
+          style={{ marginLeft: 8 }}
+        >
+          Empty ({counts.empty})
+        </button>
+
+        {/* 'With Tasks' shows lists with at least one task */}
+        <button
+          onClick={() => setFilter("hasTasks")}
+          aria-pressed={filter === "hasTasks"}
+          style={{ marginLeft: 8 }}
+        >
+          With Tasks ({counts.hasTasks})
+        </button>
       </div>
 
+      {/* List of lists (or empty state if none) */}
       <div style={{ display: "grid", gap: 12 }}>
         {visible.length === 0 ? (
+          // Empty state: encourage creating the first list
           <p style={{ color: "#666", fontStyle: "italic" }}>No lists yet. Add one above.</p>
         ) : (
-          visible.map(l => (
+          visible.map((l) => (
             <ListCard key={l.id} list={l} onDelete={onDelete} onOpen={onOpen} />
           ))
         )}
