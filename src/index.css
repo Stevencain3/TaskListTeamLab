@@ -1,8 +1,8 @@
 /* Reset some default styles */
 body {
   margin: 0;
-  font-family: system-ui, Arial, sans-serif;
-  background: #f4f8fb; /* soft background color */
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  background: linear-gradient(180deg, #36917a 0%, #225d63 50%, #0a2325 100%);
   color: #333;
 }
 
@@ -17,7 +17,7 @@ body {
 
 /* Card-like container */
 .app-container {
-  background: #fff;
+  background:linear-gradient(160deg, #b8792d, #f3ad57, #b8792d);
   border-radius: 12px;
   padding: 2rem;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
@@ -28,7 +28,7 @@ body {
 /* Header styles */
 header h1 {
   margin: 0;
-  color: #2a6bb0; /* WSC blue-ish */
+  color:#1a704e; /* WSC blue-ish */
 }
 header p {
   margin-top: 4px;
@@ -47,20 +47,20 @@ input[type="number"],
 input:not([type]) {
   flex: 1;
   padding: 0.5rem;
-  border: 1px solid #ccc;
-  border-radius: 6px;
+  border: 1px solid #0d8631;
+  border-radius: 10px;
 }
 button {
-  background: #2a6bb0;
+  background: radial-gradient(ellipse at center, #d47d0c 0%, #9b7b23 80%, #116e40 100%);
   border: none;
-  color: #fff;
+  color: #032505;
   padding: 0.5rem 1rem;
-  border-radius: 6px;
+  border-radius: 15px;
   cursor: pointer;
   transition: background 0.2s;
 }
 button:hover {
-  background: #1d4f82;
+  background: radial-gradient(ellipse at center, #c58b3e 0%, #886f29 80%, #27965e 100%);;
 }
 
 /* Task list */
