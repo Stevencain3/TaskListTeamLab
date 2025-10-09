@@ -1,7 +1,10 @@
+import React, { useState } from "react";
 import AddTaskForm from "./AddTaskForm.jsx";
 import TaskList from "./TaskList.jsx";
+import FilterBar from "./FilterBar.jsx";
 
 export default function ListPage({ list, onBack, onAddTask, onToggleTask, onDeleteTask, onDeleteList }) {
+  const [filter, setFilter] = useState("all"); // 'all' | 'active' (not done) | 'completed'
   // Show a message if the list is not found
   if (!list) {
     return (
@@ -29,9 +32,14 @@ export default function ListPage({ list, onBack, onAddTask, onToggleTask, onDele
         <AddTaskForm onAdd={onAddTask} />
       </div>
 
+      {/* In-list filter controls: reuse FilterBar so labels match TaskList's filter values */}
+      <div style={{ marginTop: 12 }}>
+        <FilterBar filter={filter} onChange={setFilter} />
+      </div>
+
       {/* TaskList: shows tasks, allows toggling and deleting. Parent persists changes. */}
       <div style={{ marginTop: 12 }}>
-        <TaskList tasks={list.tasks || []} onToggle={onToggleTask} onDelete={onDeleteTask} />
+        <TaskList tasks={list.tasks || []} onToggle={onToggleTask} onDelete={onDeleteTask} filter={filter} />
       </div>
     </section>
   );
