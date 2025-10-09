@@ -1,6 +1,6 @@
 import React from "react";
 
-export default function ListCard({ list, onDelete }) {
+export default function ListCard({ list, onDelete, onOpen }) {
   return (
     <div className="list-card" style={{ border: "1px solid #ddd", padding: 12, borderRadius: 6 }}>
       <h3 style={{ margin: "0 0 8px 0" }}>
@@ -17,6 +17,7 @@ export default function ListCard({ list, onDelete }) {
             color: "inherit",
           }}
           aria-label={`Open ${list.title}`}
+          onClick={() => onOpen?.(list.id)}
         >
           {list.title}
         </button>
