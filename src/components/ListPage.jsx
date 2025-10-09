@@ -1,10 +1,7 @@
-import React, { useState } from "react";
 import AddTaskForm from "./AddTaskForm.jsx";
 import TaskList from "./TaskList.jsx";
 
 export default function ListPage({ list, onBack, onAddTask, onToggleTask, onDeleteTask, onDeleteList }) {
-  const [filter, setFilter] = useState("all"); // all | active (not done) | completed (done)
-
   if (!list) {
     return (
       <section>
@@ -29,31 +26,7 @@ export default function ListPage({ list, onBack, onAddTask, onToggleTask, onDele
       </div>
 
       <div style={{ marginTop: 12 }}>
-        <div role="tablist" aria-label="Task filters" style={{ display: "flex", gap: 8, marginBottom: 8 }}>
-          <button
-            type="button"
-            aria-pressed={filter === "all"}
-            onClick={() => setFilter("all")}
-          >
-            All
-          </button>
-          <button
-            type="button"
-            aria-pressed={filter === "active"}
-            onClick={() => setFilter("active")}
-          >
-            Uncompleted
-          </button>
-          <button
-            type="button"
-            aria-pressed={filter === "completed"}
-            onClick={() => setFilter("completed")}
-          >
-            Completed
-          </button>
-        </div>
-
-        <TaskList tasks={list.tasks || []} onToggle={onToggleTask} onDelete={onDeleteTask} filter={filter} />
+        <TaskList tasks={list.tasks || []} onToggle={onToggleTask} onDelete={onDeleteTask} />
       </div>
     </section>
   );
