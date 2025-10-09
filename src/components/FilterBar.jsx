@@ -1,3 +1,5 @@
+// Grabbed from "ClassEx2" and completly unchanged
+
 export default function FilterBar({ filter, onChange }) {
   const opts = [
     { id: "all", label: "All" },
