@@ -31,7 +31,7 @@ export default function ListDashboard({ lists, onAdd, onDelete, onOpen }) {
           <p style={{ color: "#666", fontStyle: "italic" }}>No lists yet. Add one above.</p>
         ) : (
           visible.map(l => (
-            <ListCard key={l.id} list={l} onDelete={onDelete} onOpen={onOpen} />
+            <ListCard key={l.id} list={l} onDelete={onDelete} />
           ))
         )}
       </div>
