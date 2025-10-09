@@ -33,16 +33,16 @@ export default function ListDashboard({ lists, onAdd, onDelete, onOpen }) {
   // Returns the actual UI of the list dashboard
   return (
     <section>
-      // Calls "AddListForm" component to display the basic List page structure
+      {/*  Calls "AddListForm" component to display the basic List page structure */}
       <AddListForm onAdd={onAdd} />
-      // Calls the sorting buttons for the list
+      {/* Calls the sorting buttons for the list */}
       <div style={{ margin: "12px 0" }}>
         <button onClick={() => setFilter("all")} aria-pressed={filter === "all"}>All ({counts.total})</button>
         <button onClick={() => setFilter("empty")} aria-pressed={filter === "empty"} style={{ marginLeft: 8 }}>Empty ({counts.empty})</button>
         <button onClick={() => setFilter("hasTasks")} aria-pressed={filter === "hasTasks"} style={{ marginLeft: 8 }}>With Tasks ({counts.hasTasks})</button>
       </div>
 
-      // If there are no lists, then show a message, otherwise show the lists
+      {/* If there are no lists, then show a message, otherwise show the lists */}
       <div style={{ display: "grid", gap: 12 }}>
         {visible.length === 0 ? (
           <p style={{ color: "#666", fontStyle: "italic" }}>No lists yet. Add one above.</p>
